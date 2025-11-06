@@ -1,7 +1,13 @@
-# polar-cap-saturation
+# Regression to the Mean of Extreme Geomagnetic Storms
+
 This repository contains code that is associated with the paper titled "Regression to the Mean of Extreme Geomagnetic Storms"
 
 Three of the main codes used to calculate all the results in the paper are available as .html files, so that the logic and results can be followed by anyone without having to use MATLAB or Python.
+
+## Code used for the different results presented in the paper
+
+1. [Code 1](Code1_Monte_Carlo_Simulation_of_Solar_Wind_Uncertainty.html)
+
 
 The Data files used by the code are stored in a zenodo repository. 
 
