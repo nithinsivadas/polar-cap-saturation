@@ -2,6 +2,8 @@
 
 This repository contains code that is associated with the paper titled "Regression to the Mean of Extreme Geomagnetic Storms"
 
+Last updated on 7 Nov 2025
+
 # View the Code
 
 Three of the main codes used to calculate all the results in the paper are available as .html files, so that the logic and results can be followed by anyone without having to use MATLAB or Python.
