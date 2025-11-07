@@ -17,9 +17,15 @@ Three of the main codes used to calculate all the results in the paper are avail
 
 If you wish to run the MATLAB and Python Code,
 
-The Data files used by the code are stored in a zenodo repository, and can be downloaded from there. 
+The Data files used by the code are stored in this [zenodo repository](https://doi.org/10.5281/zenodo.17546719), and can be downloaded from there. 
 
-1. Download Data.zip from zenodo-link and unzip into your local machine, and point MATLAB Code 1 variable DataDir to the Data folder. Example DataDir = 'C:\Users\username\Documents\GitHub\polar-cap-saturation\Data\';
-2. Download Datasets.zip from zenodo-link and unzip into your local machine within the local copy of this GitHub or Git folder. The python notebook Code3_Calculating_magnitude_uncertainty.ipynb uses this folder for its input data. So the code should be able to access this folder as './Datasets/'.
+For running [Code 1: Monte Carlo Simulation of the Solar Wind Error Model](Code1_Monte_Carlo_Simulation_of_Solar_Wind_Uncertainty.html)
+1. Download **Data.zip** from [Zenodo-record](https://doi.org/10.5281/zenodo.17546719) and unzip into this gitrepo on your local machine, and point MATLAB Code 1 variable `DataDir` to a corresponding folder in the gitrepo: **Data**. Example `DataDir = 'C:\Users\username\Documents\GitHub\polar-cap-saturation\Data\';`
+
+For running [Code 3: Calucating the magnitude uncertianty](Code3_Calculating_magnitude_uncertainty.html)
+2. Download *Datasets.zip* from [Zenodo-record](https://doi.org/10.5281/zenodo.17546719) and unzip into your local machine within the local copy of this git-repo. The python notebook `Code3_Calculating_magnitude_uncertainty.ipynb` uses this folder for its input data. So the code should be able to access this folder as `./Datasets/`. So ensure the data files are inside the your gitrepo like follows: `~\polar-cap-saturation\Datasets\`. 
+
+If there are any issues running the code, you can contact me at nithinsivadas90@gmail.com
+
 
 
