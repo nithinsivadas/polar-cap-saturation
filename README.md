@@ -26,7 +26,7 @@ For running [Code 1: Monte Carlo Simulation of the Solar Wind Error Model](Code1
 
 For running [Code 3: Calculating the magnitude uncertainty](Code3_Calculating_magnitude_uncertainty.html)
 
-2. Download *Datasets.zip* from [Zenodo-record](https://doi.org/10.5281/zenodo.17546718) and unzip into your local machine within the local copy of this git-repo. The python notebook `Code3_Calculating_magnitude_uncertainty.ipynb` uses this folder for its input data. So the code should be able to access this folder as `./Datasets/`. So ensure the data files are inside the your gitrepo like follows: `~\polar-cap-saturation\Datasets\`. 
+2. Currently the data used for this script is private, as the authors are in the process of publishing this database in an independent publication. Once that is published, we will make available the data for download as a *Datasets.zip* from [Zenodo-record](https://doi.org/10.5281/zenodo.17546718). This can be unzipped into your local machine within the local copy of this git-repo. If you require access to this dataset for review purposes please contact us. The python notebook `Code3_Calculating_magnitude_uncertainty.ipynb` uses this folder for its input data. So the code should be able to access this folder as `./Datasets/`. So ensure the data files are inside the your gitrepo like follows: `~\polar-cap-saturation\Datasets\`. The result of this script, is ultimately saved as `bayanne_uncertainty_stats.mat` in the **Data.zip** directory, for use as input for Code 1. As a result, all the other codes can be run independently of Code 3. 
 
 [Code 2](Code2_Analytical_derivation_of_time_uncertainty.html) and [Code 4](Code_4_Demonstrating_regression_bias.html) do not require any data files to run. 
 
