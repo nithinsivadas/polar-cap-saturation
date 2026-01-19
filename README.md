@@ -2,7 +2,7 @@
 
 This repository contains code that is associated with the paper titled "Regression to the Mean of Extreme Geomagnetic Storms". The pre-print of the paper is uploaded in [arXiv](https://arxiv.org/abs/2201.02137). 
 
-Last updated on 25 Nov 2025
+Last updated on 19 Jan 2026
 
 # View the Code
 
