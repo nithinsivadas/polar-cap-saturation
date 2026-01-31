@@ -4,8 +4,6 @@
 % 
 % by Nithin Sivadas
 % 
-% *Note: Please do not share without Nithin's explicit permission.* 
-% 
 % Updated: 7th Oct 2021; 6th Aug 2021; Dec 25th; Jan 5th
 % 
 % 29 Dec 2021 - Added validation with Monte-Carlo method
