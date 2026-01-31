@@ -1,10 +1,6 @@
 %% Code 1: Monte-Carlo Simulation of Solar Wind Uncertainty and its Effect on Polar Cap Potential Saturation
 % by Nithin Sivadas
 % 
-% *Note: Please do not share without Nithin's explicit permission.* 
-% 
-% *Being edited before finalizing*
-% 
 % Update: 7th October 2021; 27th Sep 2021; 20th Aug 2021; 4th July 2021; 
 % 
 % 29th Dec 2021 - Corrected the kan-lee formula
@@ -71,7 +67,7 @@
 % misidentification of far more lower values of $X$ as high values.  And we find 
 % that $X$ saturates with our estimate $X^*$, in the same way as the polar cap 
 % index $\left(\textrm{PCI}\right)$ saturates with our estimate of the true shocked 
-% solar wind driver ${E^{\textrm{sh}} }_m$. Firstly, this shows that an estimate 
+% solar wind driver ${E^{\mathrm{sh}} }_m$. Firstly, this shows that an estimate 
 % of the true solar wind driver will lead it to be exactly linear with $\textrm{PCI}$ 
 % (with a ${45}^{\circ \;}$slope), and this is consistent with the model. And 
 % if the stochastic model's relationship between $X$ and $X^*$ is true, and the 
@@ -122,7 +118,7 @@ end
 % Set this to 
 % 1 if you wish to save the images onto a folder, or 
 % 0 if you just would like to view it
-setExportFig = 1;
+setExportFig = 0;
 %% 
 % From <https://pcindex.org/archive https://pcindex.org/archive> (Arctic and 
 % Antarctic Research Institute, and the Technical University of Denmark)
@@ -179,8 +175,8 @@ PCC = Fpcc(datenum(XmTime));
 % 
 % Inspired from data, we assume input distribution and ACFs for $X$. 
 % 
-% $$\begin{array}{l}X\sim \textrm{Lognormal}\left(\mu \;=-0\ldotp 2518,\sigma 
-% =0\ldotp 85\right)\\R_{\textrm{XX}} \left(\tau \;\right)\sim \textrm{from}\;\textrm{data}\end{array}$$
+% $$\begin{array}{l}X\sim \mathrm{Lognormal}\left(\mu \;=-0\ldotp 2518,\sigma 
+% =0\ldotp 85\right)\\R_{\mathrm{XX}} \left(\tau \;\right)\sim \mathrm{from}\;\mathrm{data}\end{array}$$
 % 
 % 
 % 
@@ -193,7 +189,7 @@ PCC = Fpcc(datenum(XmTime));
 % shown here. 
 % 
 % $$\begin{array}{l}\epsilon \left(t\right)=f\left(X\left(t\right)\right)N\left(t\right)\\N\sim 
-% \textrm{Normal}\left(\mu =0,\sigma =1\right)\end{array}$$
+% \mathrm{Normal}\left(\mu =0,\sigma =1\right)\end{array}$$
 % 
 % Shape of $f\left(x\right)$ is determined by the uncertainty estimated from 
 % the python code that analyzes data from the magnetosheath measurements, and 
@@ -214,9 +210,9 @@ PCC = Fpcc(datenum(XmTime));
 % 
 % We also estimate the uncertainty in propagation delays from pervious literature.
 % 
-% $${\textrm{dt}}_1 ~\textrm{uncertainty}\;\textrm{in}\;\textrm{the}\;\textrm{delay}\;\textrm{from}\;\textrm{L1}\;\textrm{to}\;\textrm{magnetopause}\;\textrm{nose}\;\left(\textrm{bowshock}\right)$$
+% $${\mathrm{dt}}_1 ~\mathrm{uncertainty}\;\mathrm{in}\;\mathrm{the}\;\mathrm{delay}\;\mathrm{from}\;\mathrm{L1}\;\mathrm{to}\;\mathrm{magnetopause}\;\mathrm{nose}\;\left(\mathrm{bowshock}\right)$$
 % 
-% $${\textrm{dt}}_2 ~\textrm{uncertainty}\;\textrm{in}\;\textrm{the}\;\textrm{delay}\;\textrm{from}\;\textrm{magnetopause}\;\textrm{nose}\;\textrm{to}\;\textrm{polar}\;\textrm{cap}\;\textrm{ionosphere}$$
+% $${\mathrm{dt}}_2 ~\mathrm{uncertainty}\;\mathrm{in}\;\mathrm{the}\;\mathrm{delay}\;\mathrm{from}\;\mathrm{magnetopause}\;\mathrm{nose}\;\mathrm{to}\;\mathrm{polar}\;\mathrm{cap}\;\mathrm{ionosphere}$$
 % 
 % 
 % 
@@ -302,15 +298,15 @@ end
 % >$ and $<{\textrm{dt}}_2 >$ are constant delays. However, these constant delay 
 % offsets are not the real story, since these propagation delays are stochastic. 
 % 
-% $$t^{\prime } =t_m +{\textrm{dt}}_1 +{\;\textrm{dt}}_2$$
+% $$t^{\prime } =t_m +{\mathrm{dt}}_1 +{\;\mathrm{dt}}_2$$
 % 
 % As a result, we assume a distribution for the propagation delay uncertainties 
 % ${\textrm{dt}}_{1\;}$and ${\textrm{dt}}_2$, using help from the literature. 
 % 
-% ${\textrm{dt}}_{1\;} \;\sim t-\textrm{location}\;\textrm{scale}\;\textrm{distribution}\;\left(\textrm{stochastic}\;\textrm{propagation}\;\textrm{delay}\;\textrm{from}\;\textrm{L1}\;\textrm{to}\;\textrm{Nose}\right)$<https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2011JA016946 
+% ${\mathrm{dt}}_{1\;} \;\sim t-\mathrm{location}\;\mathrm{scale}\;\mathrm{distribution}\;\left(\mathrm{stochastic}\;\mathrm{propagation}\;\mathrm{delay}\;\mathrm{from}\;\mathrm{L1}\;\mathrm{to}\;\mathrm{Nose}\right)$<https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2011JA016946 
 % (Case and Wild, 2012)>
 % 
-% ${\textrm{dt}}_2 \;\sim \textrm{Weibull}\;\textrm{distribution}\;\;\left(\textrm{stochastic}\;\textrm{propagation}\;\textrm{delay}\;\textrm{from}\;\textrm{Nose}\;\textrm{to}\;\textrm{Ionosophere}\right)$ 
+% ${\mathrm{dt}}_2 \;\sim \mathrm{Weibull}\;\mathrm{distribution}\;\;\left(\mathrm{stochastic}\;\mathrm{propagation}\;\mathrm{delay}\;\mathrm{from}\;\mathrm{Nose}\;\mathrm{to}\;\mathrm{Ionosophere}\right)$ 
 % <https://www.intechopen.com/books/exploring-the-solar-wind/the-polar-cap-pc-indices-relations-to-solar-wind-and-global-disturbances 
 % (Stauning 2012, Section 5, Pg 369-372) >
 % 
@@ -353,22 +349,26 @@ end
 % *Figure ED3: Propagation delay uncertainty*
 
 figS3 = figure; 
-resize_figure(figS3,2*55,2*55);
+resize_figure(figS3,60,60);
 tbins = -100:1:100;
 histogram(terr1,tbins,'Normalization',"pdf",'DisplayStyle','stairs','LineWidth',1,'EdgeColor','k');
 hold on;
-histogram(terr2,tbins,'Normalization',"pdf",'DisplayStyle','stairs','LineWidth',1,'EdgeColor','b');
+histogram(terr2,tbins,'Normalization',"pdf",'DisplayStyle','stairs','LineWidth',1,'EdgeColor','#0072b2');
 hold on;
-histogram(terr2 + terr1,tbins,'Normalization',"pdf",'DisplayStyle','stairs','LineWidth',1,'EdgeColor','m','LineStyle','--');
+histogram(terr2 + terr1,tbins,'Normalization',"pdf",'DisplayStyle','stairs','LineWidth',1,'EdgeColor','#cc79a7','LineStyle','--');
 xlabel('$\tau$ [mins]');
 ylabel('pdf($\tau$)');
-legend('$dt_1$','$dt_2$','Total: $dt_1 + dt_2$ ','Interpreter','latex','Location','best');
+%legend('$dt_1$','$dt_2$','Total: $dt_1 + dt_2$ ','Interpreter','latex','Location','best');
 title('Propagation delay uncertainty','Interpreter',"none");
 ylim([0,0.05]);
+fontname('Helvetica');
+fontsize(7, "points");
 
 if setExportFig
 exportgraphics(figS3,[outputFolder,'ExtendedDataFigure3.png'], ...
-    'Resolution',600);
+    'Resolution',300);
+exportgraphics(figS3,[outputFolder,'ExtendedDataFigure3.pdf'], ...
+    'ContentType','vector');
 %export_fig([outputFolder,'FigureED3.png'], ...
 %    '-r600','-png','-nocrop',figS3);
 %export_fig([outputFolder,'FigureED3.pdf'], ...
@@ -469,7 +469,7 @@ EPCCgW = create_curve(Xm2',PCC,XBins);
 PCCm = @(E,E_0) E./(sqrt(1+(E./E_0).^2));
 EXIgWI = create_curve(WI(:),XI(:),XBins);
 %% 
-% The conditional expectation of PCI: $<E_{\textrm{PC}} |{E^* }_m >$ from data, 
+% The conditional expectation of PCI: $<E_{\mathrm{PC}} |{E^* }_m >$ from data, 
 % matches stunningly with the conditional expectation $<X|X^* >$ from the model. 
 % As the model is based on only the stochastic properties of PCI, and the stochastic 
 % properties of the sources of uncertainty in propagation of ${E^* }_m$ to the 
@@ -519,7 +519,7 @@ end
 % By comparing how well the variability between PCI and $E_m$ is captured, by 
 % $X$ and $X^*$, we can validate the stochastic model. 
 % 
-% $\textrm{error}=X^* -X$ ; Normalized $\textrm{error}=\frac{X^* -X}{X}$
+% $\mathrm{error}=X^* -X$ ; Normalized $\mathrm{error}=\frac{X^* -X}{X}$
 % 
 % Overall, the plot of the marginal error distribution below suggests that the 
 % model is accurately modeling the uncertainties. However, there is scope for 
@@ -571,7 +571,7 @@ end
 % captured by the model (Right).
 
 figS7=figure;
-resize_figure(figS7,2*55,2*120);
+resize_figure(figS7,90,180);
 
 t=tiledlayout(1,2,'TileSpacing','loose');
 title(t,'Comparing the Normalized Error Distribution between data and model');
@@ -583,6 +583,7 @@ ylabel('$E_{PC}$ [mV/m]','Interpreter','latex');
 xlabel('$({E}^*_{m}-E_{PC})/E_{PC}$','Interpreter','latex');
 xlim([-2,2]);
 title('Data');
+set(gca, 'TickDir', 'out');
 
 nexttile
 plot_2D_error(XPegX, YPegX, PegX,'$P({X}^*-{X}/{X}|{X})$');
@@ -592,22 +593,28 @@ colormap(inferno);
 title('Model');
 ylabel('$X$','Interpreter','latex');
 xlabel('$ ({X}^* -{X} )/{X}$','Interpreter','latex');
+fontsize(7,"points");
+fontname("Helvetica");
+set(gca, 'TickDir', 'out');
+
 if setExportFig
 exportgraphics(figS7,[outputFolder,'ExtendedDataFigure6.png'], ...
     'Resolution',600);
+%exportgraphics(figS7,[outputFolder,'ExtendedDataFigure6.pdf'], ...
+%    'ContentType','auto');
 %export_fig([outputFolder,'FigureED6.png'], ...
 %    '-r600','-png','-nocrop',figS7);
 end
 %% 
 % 
-% Probability distributions match (Figure ED1, ED5)
+% Probability distributions match (Figure ED1, ED4)
 % In the following figure, in panel 1, we compare $\textrm{pdf}\left(\textrm{PCI}\right)$ 
 % and $\textrm{pdf}\left(X\right)$. As $\textrm{pdf}\left(X\right)$ is an input 
-% to the model and inspired from $\textrm{pdf}\left(\textrm{PCI}\right)$, as we 
-% assume $X\proptoY_{\textrm{PC}} ,\textrm{where}\;Y_{\textrm{PC}} =\textrm{PCI}$. 
+% to the model and inspired from $\mathrm{pdf}\left(\mathrm{PCI}\right)$, as we 
+% assume $X\proptoY_{\mathrm{PC}} ,\mathrm{where}\;Y_{\mathrm{PC}} =\mathrm{PCI}$. 
 % There is no surprise that they are similar. 
 % 
-% However, in the second panel $\textrm{pdf}\left(E_m \right)$ from data is 
+% However, in the second panel $\mathrm{pdf}\left(E_m \right)$ from data is 
 % shown with $\textrm{pdf}\left(X^* \right)$ which is calculated by the model. 
 % The fact that *they are very similar*, should give us more confidence in the 
 % validity of our assumed stochastic model between $X^*$ and $X$. 
@@ -617,25 +624,28 @@ end
 
 figS1=figure; 
 XBinsLog = logspace(-1,log10(25),100);
-resize_figure(figS1,2*55,2*55);
+resize_figure(figS1,60,60);
 
 nexttile
 histogram(PCC,XBinsLog,'Normalization','pdf','DisplayStyle','stairs','LineWidth',1,'EdgeColor','k');
 hold on;
-histogram(XI,XBinsLog,'Normalization','pdf','DisplayStyle','stairs','LineWidth',1,'EdgeColor','m');
+histogram(XI,XBinsLog,'Normalization','pdf','DisplayStyle','stairs','LineWidth',1,'EdgeColor','#cc79a7');
 hold on;
 
 set(gca,'XScale','log','YScale','log');
 ylim([10^-10,100]);
 xlim([10^-1,25]);
-legend('Data: $pdf(E_{PC})$','Model input: $pdf( {X} )$','Interpreter','latex')
+legend('Data: $pdf(E_{PC})$','Model input: $pdf( {X} )$','Interpreter','latex','Location','southwest');
 xlabel('$E_{PC} \ , \ {X}$ [mV/m]');
 ylabel('$pdf$');
 title('Comparing model input to data');
-
+fontname('Helvetica');
+fontsize(7, "points")
 if setExportFig
 exportgraphics(figS1,[outputFolder,'ExtendedDataFigure1.png'], ...
-    'Resolution',600);
+    'Resolution',300);
+exportgraphics(figS1,[outputFolder,'ExtendedDataFigure1.pdf'], ...
+    'ContentType','vector');
 % export_fig([outputFolder,'FigureED1.png'], ...
 %     '-r600','-png','-nocrop',figS1);
 % export_fig([outputFolder,'FigureED1.pdf'], ...
@@ -644,23 +654,27 @@ end
 
 
 figS5=figure; 
-resize_figure(figS5,2*55,2*55);
+resize_figure(figS5,60,60);
 histogram(Xm,XBinsLog,'Normalization','pdf','DisplayStyle','stairs','LineWidth',1,'EdgeColor','k');
 hold on;
-histogram(WI,XBinsLog,'Normalization','pdf','DisplayStyle','stairs','LineWidth',1,'EdgeColor','m');
+histogram(WI,XBinsLog,'Normalization','pdf','DisplayStyle','stairs','LineWidth',1,'EdgeColor','#cc79a7');
 set(gca,'XScale','log','YScale','log');
 ylim([10^-10,100]);
 xlim([10^-1,25]);
-legend('Data: $ pdf({E}^*_m) $ ','Model: $ pdf({X}^*) $','Interpreter','latex');
+legend('Data: $ pdf({E}^*_m) $ ','Model: $ pdf({X}^*) $','Interpreter','latex','Location','southwest');
 xlabel('$ {E}^*_m \ , \ {X}^{*} $ [mV/m]');
 ylabel('$pdf$');
 title('Comparing model output to data');
+fontname('Helvetica');
+fontsize(7, "points")
 %% 
 % *Figure ED4: Output of the model matches with data as well.* 
 
 if setExportFig
     exportgraphics(figS5,[outputFolder,'ExtendedDataFigure4.png'], ...
-    'Resolution',600);
+    'Resolution',300);
+    exportgraphics(figS5,[outputFolder,'ExtendedDataFigure4.pdf'], ...
+    'ContentType','vector');
 %export_fig([outputFolder,'FigureED4.png'], ...
 %    '-r600','-png','-nocrop',figS5);
 %export_fig([outputFolder,'FigureED4.pdf'], ...
@@ -671,7 +685,7 @@ end
 % Slope of conditional expectations match
 % The slope $$\frac{d<X|X^*>}{dX}$$  of the conditional expectations shown in 
 % the main result, demonstrates the nature of the non-linear relationship between 
-% $\textrm{PCI}$ and ${E^* }_m$. And it turns out the model predicts the behavior 
+% $\mathrm{PCI}$ and ${E^* }_m$. And it turns out the model predicts the behavior 
 % of this slope, varying with $X$, almost exactly as observed in the data, up 
 % to 15 mV/m, after which the data is too sparse to take the slopes seriously. 
 
@@ -716,24 +730,28 @@ lag_XI = lagXI(1:2^12);
 acf_fit_XI = fit(lag_XI,acf_XI','spline'); % Fitting the ACF with a spline!
 %%
 figS2=figure; 
-resize_figure(figS2,2*55,2*55);
+resize_figure(figS2,60,60);
 
 plot(tInd./60,acf_fit_PCC(tInd),'--k');
 hold on;
-plot(tInd./60,acf_fit_XI(tInd),'-m');
+plot(tInd./60,acf_fit_XI(tInd),'-','Color','#cc79a7');
 ylim([0,1]);
 xlim([-1,14]);
-legend('Data: $<E_{PC}(t) E_{PC}(t + \tau)>$','Model: $<{X}(t) {X}(t+\tau)>$','Interpreter','latex');
+legend('Data: $<E_{PC}(t) E_{PC}(t + \tau)>$','Model: $<{X}(t) {X}(t+\tau)>$','Interpreter','latex','Location','southwest');
 title('Comparing ACFs of model input and data');
 xlim([-1, 14]);
 ylabel('Autocorrelation Functions');
 
 xlabel('$\tau$ [Hours]');
+fontname('Helvetica');
+fontsize(7, "points");
 % *ACF of model input is made to be similar to the data (Figure ED2)*
 
 if setExportFig
     exportgraphics(figS2,[outputFolder,'ExtendedDataFigure2.png'], ...
-    'Resolution',600);
+    'Resolution',300);
+    exportgraphics(figS2,[outputFolder,'ExtendedDataFigure2.pdf'], ...
+    'ContentType','vector');
 %export_fig([outputFolder,'FigureED2.png'], ...
 %    '-r600','-png','-nocrop',figS2);
 %export_fig([outputFolder,'FigureED2.pdf'], ...
@@ -862,22 +880,26 @@ end
 % Predicting nature of random error between estimate and true value (Figure ED5)
 
 figS6=figure; 
-resize_figure(figS6,2*55,2*55);
+resize_figure(figS6,60,60);
 plot(EeXIgWIs.XBins,100.*EeXIgWIs.stdYgX./EeXIgWIs.XBins,'k');
 ylim([0,100]);
 ylabel('$\Sigma({E}^*_m-E_{PC}) / E_{PC}$  [\%]');
 set(gca,'YColor','k');
 hold on;
-plot(EeXIgWI.XBins,100.*EeXIgWI.stdYgX./EeXIgWI.XBins,'m');
+plot(EeXIgWI.XBins,100.*EeXIgWI.stdYgX./EeXIgWI.XBins,'','Color','#cc79a7');
 ylim([0,100]);
 
 title('Std. deviation of normalized error','Spread of the normalized error distribution','Interpreter',"none");
 legend('Data','Model');
 xlabel('${E}^*_m \ , \ {X}^*$ [mV/m]');
+fontsize(7,"points");
+fontname("Helvetica");
 
 if setExportFig
 exportgraphics(figS6,[outputFolder,'ExtendedDataFigure5.png'], ...
-    'Resolution',600);
+    'Resolution',300);
+exportgraphics(figS6,[outputFolder,'ExtendedDataFigure5.pdf'], ...
+    'ContentType','vector');
 %export_fig([outputFolder,'FigureED5.png'], ...
 %    '-r600','-png','-nocrop',figS6);
 %export_fig([outputFolder,'FigureED5.pdf'], ...
@@ -889,22 +911,25 @@ end
 % of the solar wind electric field at the polar cap. 
 
 figS8=figure; 
-resize_figure(figS8,2*55,2*55);
+resize_figure(figS8,60,60);
 plot(EeXIgWIs.XBins,EeXIgWIs.YgX,'k');
 ylim([-5,40]);
 ylabel('$mean({E}^*_m-E_{PC})$  [mV/m]');
 set(gca,'YColor','k');
 hold on;
-plot(EeXIgWI.XBins,EeXIgWI.YgX,'m');
+plot(EeXIgWI.XBins,EeXIgWI.YgX,'','Color','#cc79a7');
 ylim([-5,25]);
 
 title('Mean of error','Bias','Interpreter',"none");
 legend('Data','Model');
 xlabel('${E}^*_m \ , \ {X}^*$ [mV/m]');
-
+fontsize(7,"points");
+fontname("Helvetica");
 if setExportFig
 exportgraphics(figS8,[outputFolder,'ExtendedDataFigure7.png'], ...
-    'Resolution',600);
+    'Resolution',300);
+exportgraphics(figS8,[outputFolder,'ExtendedDataFigure7.pdf'], ...
+    'ContentType','vector');
 %export_fig([outputFolder,'FigureED7.png'], ...
 %    '-r600','-png','-nocrop',figS8);
 %export_fig([outputFolder,'FigureED7.pdf'], ...
@@ -1065,6 +1090,7 @@ xlabel('$({E}^*_{m}-E_{PC})/E_{PC}$','Interpreter','latex');
 xlim([-2,2]);
 title('Data');
 
+
 nexttile
 plot_2D_error(XPegW, YPegW, PegW,'$P({X}^*-{X}/{X}|{X}^*)$');
 caxis([0,1]);
@@ -1081,7 +1107,7 @@ exportgraphics(figA1,[outputFolder,'ExtendedDataFigure6_Extra.png'], ...
 end
 %% Result 2: Saturation of Auroral Currents Explained (as well)
 % For the sake of argument, if we assume, the auroral currents increase linearly 
-% with electric field in the ionosphere, such as $Y_{\textrm{SML}} =-120\;X+N\left(0,\sigma 
+% with electric field in the ionosphere, such as $Y_{\mathrm{SML}} =-120\;X+N\left(0,\sigma 
 % \;\right)$, then the conditional expectation $<Y|X^* >$will non-linearly increase 
 % with $X^*$. And this non-linearity, is exactly similar to what we observe from 
 % data. 
@@ -1091,7 +1117,7 @@ end
 % }_m >$. This matches exactly with the model prediction $<Y|X^* >$, the magneta 
 % line, provided we make the above assumption of a linear relationship between 
 % $Y_{\textrm{SML}}$ (model proxy for $\textrm{SML}$) and $Y_{\textrm{PC}} =X$ 
-% (model proxy for $E_{\textrm{PC}}$, effective ionospheric electric field). 
+% (model proxy for $E_{\mathrm{PC}}$, effective ionospheric electric field). 
 % 
 % This result implies, that the non-linear relationship between auroral electrojet 
 % current and geoeffective field, can be explained by our uncertainties in propagating 
