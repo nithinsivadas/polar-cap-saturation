@@ -21,7 +21,7 @@ Four of the main codes used to calculate all the results in the paper are availa
 
 If you wish to run the MATLAB and Python Code,
 
-The Data files used by the code are stored in this [zenodo repository](https://doi.org/10.5281/zenodo.17546719), and can be downloaded from there. 
+The Data files used by the code are stored in this [zenodo repository](https://doi.org/10.5281/zenodo.17546718), and can be downloaded from there. 
 
 For running [Code 1: Monte Carlo Simulation of the Solar Wind Error Model](Code1_Monte_Carlo_Simulation_of_Solar_Wind_Uncertainty.html) and [Code 6: Sensitivity analysis of magnitude uncertainty](Code6_Sensitivity_analysis_of_magnitude_uncertainty.html)
 1. Download **Data.zip** from [Zenodo-record](https://doi.org/10.5281/zenodo.17546718) and unzip into this gitrepo on your local machine, and point MATLAB Code 1 variable `DataDir` to a corresponding folder in the gitrepo: **Data**. Example `DataDir = ~\polar-cap-saturation\Data\';`
