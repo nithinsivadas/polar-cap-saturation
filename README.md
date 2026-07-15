@@ -1,6 +1,6 @@
 # Demonstrating Regression to the Mean of Extreme Geomagnetic Storms
 
-This repository contains code that is associated with the paper titled "Regression to the Mean of Extreme Geomagnetic Storms". The pre-print of the paper is uploaded in [arXiv](https://arxiv.org/abs/2201.02137). 
+This repository contains code that is associated with the paper titled "Regression to the Mean can Explain Saturation of Geomagnetic Storms". The paper is published in [Nature](https://doi.org/10.1038/s41586-026-10757-4). 
 
 Last updated on 19 Jan 2026
 
